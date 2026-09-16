@@ -1,89 +1,508 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
 
-		<title>Landing Page</title>
-		<style>
-			body {
-				font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
-				color: #36414C;
-				font-weight: 300;
-			}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-			.page-container {
-				max-width: 800px;
-				padding: 15px;
-				vertical-align: middle;
-				position: absolute;
-				top: 50%;
-				left: 0;
-				right: 0;
-				margin: 0 auto;
-				transform: translate(0%, -50%);
-			}
+  <title>efeone</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-			.svg-container {
-				float: left;
-				width: 150px;
-				padding-top: 24px;
-			}
+  <!-- Favicons -->
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-			.message-container {
-				float: left;
-				padding-left: 15px;
-				font-size: 16px;
-				line-height: 1.6;
-			}
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
-			.message-container h1 {
-				font-size: 48px;
-				line-height: 1.2;
-				font-weight: 200;
-			}
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-			.message-container .message {
-				color: #8D99A6;
-			}
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-			.clearfix {
-				clear: both;
-			}
+</head>
 
-			a {
-				color: #5E64FF;
-			}
+<body onload = 'load_main_data()'>
 
-			@media (max-width: 767px) {
-				.svg-container {
-					float: none;
-					padding-top: 0px;
-				}
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
 
-				.message-container {
-					float: none;
-					width: 100% !important;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<div class="page-container">
-			<div class="svg-container">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" viewBox="0 0 32 32" version="1.1" x="0px" y="0px"><title>sad-face-avatar-boy-man-11</title><desc>Created with Sketch.</desc><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><path d="M24.5728851,23.0941141 C26.0847779,16.969087 23.5542402,12.1548858 21.4280864,11.0822754 C19.598459,12.7549171 13.9938462,17 10.2890466,17 C12.2343263,15.4384766 12.8488535,12.9394531 12.8488535,12.9394531 C12.8488535,12.9394531 10.9859461,15.7346191 7.24611965,17 C6.45154466,18.5731485 6.67682658,20.3507184 6.78659707,21.5361582 C6.84777749,21.7403698 6.95210509,22.0855229 6.99214296,22.1994274 C7.09055416,22.4793995 7.21210961,22.7924224 7.35775135,23.1301118 C7.774276,24.0958785 8.2986796,25.0616511 8.9372701,25.9603932 C10.738893,28.4959687 13.0675623,30 16,30 C18.9311427,30 21.2399187,28.4973998 23.0104666,25.9636063 C23.6381381,25.065359 24.1509411,24.1000358 24.5559252,23.1346951 C24.5616169,23.1211281 24.5672702,23.1076009 24.5728851,23.0941141 L24.5728851,23.0941141 Z M5.94669386,22.2116429 C4.61458602,20.1217921 3.13011281,13.1987617 4.62664708,8.75830078 C6.40621687,3.47802734 12.6103081,1 15.7729333,1 C18.8013894,1.00000002 21.8450169,1.93994141 23.0552307,3.80615234 C23.0552307,3.80615234 25.0915798,2.75024414 26.9020692,3.80615234 C25.0915798,4.17895508 24.887945,5.19335938 24.887945,5.19335938 C27.9234944,6.90377632 29.4577737,17.0840684 26.1082885,21.6811732 C26.0708438,21.8119773 25.9120331,22.3649335 25.857287,22.526075 C25.7549564,22.8272785 25.6289716,23.1618434 25.4780638,23.5215549 C25.0472763,24.5484017 24.5017812,25.575266 23.8301706,26.5363937 C21.888484,29.3151002 19.2996007,31 16,31 C12.7016943,31 10.0952049,29.3165313 8.12209422,26.5396068 C7.43952798,25.5789739 6.88219633,24.552559 6.43951227,23.5261382 C6.28443097,23.166562 6.15455941,22.832124 6.04872776,22.5310413 C6.02660008,22.4680898 5.98792403,22.3454665 5.94669386,22.2116429 L5.94669386,22.2116429 Z M20.6103625,20.496219 L21.7234973,21.0527864 C21.9704865,21.176281 22.0705987,21.4766175 21.9471041,21.7236068 C21.8236094,21.970596 21.5232729,22.0707082 21.2762837,21.9472136 L19.2762837,20.9472136 C18.9077594,20.7629515 18.9077594,20.2370485 19.2762837,20.0527864 L21.2762837,19.0527864 C21.5232729,18.9292918 21.8236094,19.029404 21.9471041,19.2763932 C22.0705987,19.5233825 21.9704865,19.823719 21.7234973,19.9472136 L20.6103625,20.496219 Z M11.389528,20.496219 L10.2763932,21.0527864 C10.029404,21.176281 9.92929178,21.4766175 10.0527864,21.7236068 C10.176281,21.970596 10.4766175,22.0707082 10.7236068,21.9472136 L12.7236068,20.9472136 C13.0921311,20.7629515 13.0921311,20.2370485 12.7236068,20.0527864 L10.7236068,19.0527864 C10.4766175,18.9292918 10.176281,19.029404 10.0527864,19.2763932 C9.92929178,19.5233825 10.029404,19.823719 10.2763932,19.9472136 L11.389528,20.496219 Z M14.4246316,26.7639848 C14.4725953,26.6868331 14.5938453,26.5444206 14.7863941,26.3975309 C15.1127054,26.1485979 15.512309,26 16,26 C16.487691,26 16.8872946,26.1485979 17.2136059,26.3975309 C17.4061547,26.5444206 17.5274047,26.6868331 17.5753684,26.7639848 C17.7211632,26.9985024 18.0294673,27.0704264 18.2639848,26.9246316 C18.4985024,26.7788368 18.5704264,26.4705327 18.4246316,26.2360152 C18.3171754,26.0631669 18.1191505,25.8305794 17.8201344,25.6024691 C17.3271707,25.2264021 16.7183393,25 16,25 C15.2816607,25 14.6728293,25.2264021 14.1798656,25.6024691 C13.8808495,25.8305794 13.6828246,26.0631669 13.5753684,26.2360152 C13.4295736,26.4705327 13.5014976,26.7788368 13.7360152,26.9246316 C13.9705327,27.0704264 14.2788368,26.9985024 14.4246316,26.7639848 Z" fill="#000000" sketch:type="MSShapeGroup"></path></g></svg>
-			</div>
-			<div class="message-container" style="width: calc(100% - 170px);">
-				<h1>
-					Sorry! <br>
-					We will be back soon.
-				</h1>
-				<p class="message">
-					<strong>Don't panic.</strong> It's not you, it's us.<br>
-					Most likely, our engineers are updating the code,
-					and it should take a minute for the new code to load into memory.<br><br>
-					Try refreshing after a minute or two.
-				</p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
+      <div class="logo">
+        <a href="index.html"><img src="assets/img/efeone Logo PNG (1).png" alt="" class="img-fluid"></a>
+      </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="blog.html">Blogs</a></li>
+          <li class="dropdown"><a href="team.html"><span>Team</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="alumni.html">Alumni</a></li>
+                </ul>
+              </li>
+          <li><a class="nav-link scrollto" href="careers.html">Careers</a></li>
+          <li><a class="nav-link scrollto" href="#contact_section">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <!-- --------navbar-------- -->
+
+  </div>
+  </header>
+  <!-- =====End Header======  -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up" style="color: #0093d2;"></h1>
+          <h6 data-aos="fade-up" style="font-size: 25px; padding-left: 26px; font-weight: 750; ">E&nbspV&nbspE&nbspR&nbspY&nbspT&nbspH&nbspI&nbspN&nbspG&nbsp&nbsp  F&nbspO&nbspR&nbsp  &nbsp
+            E&nbspV&nbspE&nbspR&nbspY&nbspO&nbspN&nbspE</h6>
+
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+
+          <div class="pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300" style="text-align: center;">
+            <p>
+              At efeone, we are driven by a commitment to enhance human living through technology. We empower our customers with
+              optimal technological solutions that deliver utmost satisfaction. Our goal is to help businesses achieve sustainable
+              growth by providing the best tools that ensure maximum returns on investment.
+              Our services are designed to simplify your work and help you stay focused on your objectives. At efeone, we believe
+              in building long-lasting, mutually beneficial relationships with our clients, and our services are always tailored to
+              meet your unique needs. With our extensive functional expertise and exposure to various business verticals, we provide
+              reliable ERP solution development and implementation assistance that enables you to operate your business with ease.
+              Our solutions are user-friendly and easy to adapt, making your experience seamless and stress-free. As a full-service
+              IT provider, efeone handles all aspects of your IT needs, so you can focus on what you do best: running your business.
+              Trust efeone to help you grow and manage your enterprise efficiently and effectively.
+            </p>
+            <!-- <a href="#" class="btn-learn-more" style="text-align: center;">Learn More</a> -->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>What makes us Special?</h2>
+          <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p> -->
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #ffbb2c;"></i>
+              <h3>Time Management</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #5578ff;"></i>
+              <h3>Problem Solving</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #e80368;"></i>
+              <h3>Expertise</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #e361ff;"></i>
+              <h3>Cost Competitiveness</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #47aeff;"></i>
+              <h3>Capability</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+              <h3>Competency</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #11dbcf;"></i>
+              <h3>Teamwork</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #4233ff;"></i>
+              <h3>Innovative</h3>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- =========End Features Section======== -->
 
 
-</body></html>
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
+            <img src="assets/img/stats-img.svg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-xl-5 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300" style="padding-left: 10%;">
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="four col-md-7">
+                  <div class="count-box">
+                    <p id = 'customer' style="font-family: sans-serif; font-size: 40px; font-weight: 700;"></p>
+
+                    <i class="bi bi-emoji-smile"></i>
+                    <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter"></span>
+                    <p style="font-size: 17px; font-weight: 600;"><strong> Happy Clients </strong></p>
+                  </div>
+                </div>
+
+
+              <div class="four col-md-5">
+                <div class="count-box" >
+                  <p id = 'projects' style="font-family: sans-serif; font-size: 40px; font-weight: 700;" ></p>
+                  <i class="bi bi-journal-richtext"></i>
+                <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter"></span>
+                <p style="font-size: 17px; font-weight: 600;"><strong> Projects</strong></p>
+                </div>
+              </div>
+              <div class="four col-md-7">
+                <div class="count-box">
+                </div>
+              </div>
+                </div>
+              </div>
+
+
+       </section><!-- End Counts Section -->
+
+    <!-- ======= Services Section =======
+   <section id="services" class="services"> -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Services</h2>
+          <p>With efeone, you can list your requirements for a software product and then receive the completed product
+            with all of your criteria met and more. We are always striving to make our product more than just "Paper to
+            Digital" by improving its operations to meet your demands and introducing features that will benefit you.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4 class="title"><a href="">Enterprise Business Re-engineering</a></h4>
+              <p class="description">We provide provisions for optimizing business processes to improve operational
+                costs and customer service.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Manufacturing</a></h4>
+              <p class="description">Enables a manufacturing company to record, analyse and reflect on employee details,
+                interactions, work order, stock, accounts etc.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Project Management</a></h4>
+              <p class="description">Complete module that can be used to track the progress of a project using tasks
+                timesheets etc.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Delivery Services</a></h4>
+              <p class="description">Integrated system available on web, android/iOS to track orders, drivers, customer
+                reviews and more.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 5%;">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Construction Projects</a></h4>
+              <p class="description">Easily analyse and track material consumption, employees, acccounts etc.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">eCommerce website</a></h4>
+              <p class="description">Fully functional website with eye catching design, plethora of features and
+                database setup.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Distribution</a></h4>
+              <p class="description">Manage suppliers, warehouses, stocks etc using a single web application and use the
+                data to analyze the accounts.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">Healthcare</a></h4>
+              <p class="description">Helping healthcare practitioners, clinics and hospitals to manage healthcare
+                workflows efficiently.</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- ======= Life @ efeone Section ======= -->
+     <section id="life" class="life">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Life @ efeone</h2>
+        </div>
+
+        <div class="row align-items-center gx-4 gy-4" style="padding: 20px;">
+          <!-- Slider column -->
+          <div class="col-lg-6 d-flex justify-content-center">
+            <div class="slider">
+              <div class="slides" id="efeoneSlides"></div>
+            </div>
+          </div>
+
+          <!-- Text content column -->
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+            <p style="text-align: justify;">
+              At Efeone, employees can expect a workplace that values equality and
+              diversity. While a hierarchical structure exists, all employees' opinions are respected and treated
+              equally. The company fosters an innovative and interactive environment, where colleagues from different
+              backgrounds and skillsets exchange ideas. This provides employees with a lot of opportunities for
+              personal and professional growth.
+              The atmosphere at Efeone is positive, and the company culture is inclusive and supportive. The company
+              provides ongoing training and educational programs to keep up with emerging trends and technologies.
+              Employees can expect to develop their qualities and work alongside a fantastic team that is always
+              supportive.
+              Starting a career at Efeone can be the beginning of a new journey, offering a change from a mechanical
+              way of life to a technical one. Employees have the opportunity to work in a great environment, develop
+              friendships, and gain valuable values. The team at Efeone is always cooperative, even with novice
+              employees in the software industry, providing opportunities to manage various duties.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== Life @ efeone  Section ============== -->
+
+
+    <!-- ======= Journey Section ======= -->
+    <section id="journey" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our journey</h2>
+
+        </div>
+        <div id="efe_journey" class="container bootdey" data-aos="fade-up">
+
+        </div>
+    </section>
+    <!-- ================Journey Section===========-->
+
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id='contact_section' class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact Us</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-about">
+              <h3>efeone</h3>
+              <p>efeone is a technology consulting company delivering cutting edge digital solutions to businesses
+                worldwide.
+                Our goal is to help businesses grow, transform and achieve their business objectives by leveraging
+                technology.
+              </p>
+              <div class="social-links">
+                <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
+                <a href="https://www.facebook.com/efeone.social?mibextid=ZbWKwL" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/efeone.social/" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/efeone/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="info">
+  <div class="map-link-wrapper">
+  <i class="ri-map-pin-line"></i>
+  <p>
+    <a href="https://www.google.com/maps?q=Carino+INC,+Pooladikkunnu,+Eranhikkal,+Kozhikode+673303,+Kerala,+India" 
+       target="_blank" 
+       class="tooltip-map"
+       data-tooltip="Locate in Google Map">
+      No. 3/403 C, Carino INC, Pooladikkunnu<br>
+      Eranhikkal, Kozhikode - 673303<br>
+      Kerala, India
+    </a>
+  </p>
+</div>
+
+
+  <div>
+    <i class="ri-mail-send-line"></i>
+    <p>
+      <a href="mailto:info@efeone.com" style="text-decoration: none; color: inherit;">
+        info@efeone.com
+      </a>
+    </p>
+  </div>
+
+    <div>
+    <i class="ri-phone-line"></i>
+    <p>
+      <a href="#contact_section" onclick="dialNumber(event, '9995940849')" style="text-decoration: none; color: inherit;">
+        9995940849
+      </a>
+    </p>
+    <p>
+      <a href="#contact_section" onclick="dialNumber(event, '9567939306')" style="text-decoration: none; color: inherit;">
+        9567939306
+      </a>
+    </p>
+  </div>
+</div>
+
+
+          </div>
+
+    <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+  <!-- Success Message Box -->
+            <div id="custom-alert" style="display: none; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 12px 16px; border-radius: 6px; font-size: 15px; font-weight: 500; margin-bottom: 15px;">
+              Your message has been sent successfully! , we will get back to you soon.
+            </div>
+
+            <!-- Contact Form Fields -->
+            <div class="form-group" style="padding-top: 10px;">
+              <input type="text" name="name" class="form-control" id="c_name" placeholder="Your Name" required style="border-radius: 5px;">
+            </div>
+            <div class="form-group" style="padding-top: 10px;">
+              <select class="form-control" name="subject" id="c_subject" required style="border-radius: 5px;">
+                <option value="" disabled selected hidden>Select a subject</option>
+                <option value="General Inquiry">Sales</option>
+                <option value="Order Issue">Support</option>
+                <option value="Product Info">ERPNext Implementation</option>
+                <option value="Feedback">Business Consultant</option>
+              </select>
+            </div>
+            <div class="form-group" style="padding-top: 10px;">
+              <input type="email" class="form-control" name="email" id="c_email" placeholder="Your Email" required style="border-radius: 5px;">
+            </div>
+            <div class="form-group" style="padding-top: 10px;">
+              <textarea id="c_message" class="form-control" name="message" rows="5" placeholder="Message" required style="border-radius: 5px;"></textarea>
+            </div>
+            <div class="my-3" style="padding-top: 10px;">
+              <div class="error-message" style="color: red;"></div>
+            </div>            
+           <button
+            id="sendmessage-button" onclick="sendMessage()">Send Message
+           </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright" style="padding-right: 42%;">
+            &copy; Copyright <strong>efeone</strong>. All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- =======End Footer======= -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <!-- <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script> -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/blog.js"></script>
+  <script src="assets/js/main_index.js"></script>
+</body>
+
+</html>
